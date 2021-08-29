@@ -1,0 +1,473 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title>add to cart</title>
+    <!--by sahabir hasan saim -->
+    <!--www.sahabirit.com-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        
+        
+       body {
+     background-color: #eeeeee
+ }
+
+ .container {
+     margin-top: 50px;
+     margin-bottom: 50px
+ }
+
+ a {
+     text-decoration: none !important
+ }
+
+ .card-product-list,
+ .card-product-grid {
+     margin-bottom: 0
+ }
+
+ .card {
+     position: relative;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     -webkit-box-orient: vertical;
+     -webkit-box-direction: normal;
+     -ms-flex-direction: column;
+     flex-direction: column;
+     min-width: 0;
+     word-wrap: break-word;
+     background-color: #fff;
+     background-clip: border-box;
+     border: 1px solid rgba(0, 0, 0, 0.1);
+     border-radius: 0.10rem;
+     margin-top: 10px
+ }
+
+ .card-product-grid:hover {
+     -webkit-box-shadow: 0 4px 15px rgba(153, 153, 153, 0.3);
+     box-shadow: 0 4px 15px rgba(153, 153, 153, 0.3);
+     -webkit-transition: .3s;
+     transition: .3s
+ }
+
+ .card-product-grid .img-wrap {
+     border-radius: 0.2rem 0.2rem 0 0;
+     height: 220px
+ }
+
+ .card .img-wrap {
+     overflow: hidden
+ }
+
+ .card-lg .img-wrap {
+     height: 280px
+ }
+
+ .card-product-grid .img-wrap {
+     border-radius: 0.2rem 0.2rem 0 0;
+     height: 228px;
+     padding: 16px
+ }
+
+ [class*='card-product'] .img-wrap img {
+     height: 100%;
+     max-width: 100%;
+     width: auto;
+     display: inline-block;
+     -o-object-fit: cover;
+     object-fit: cover
+ }
+
+ .img-wrap {
+     text-align: center;
+     display: block
+ }
+
+ .card-product-grid .info-wrap {
+     overflow: hidden;
+     padding: 18px 20px
+ }
+
+ [class*='card-product'] a.title {
+     color: #212529;
+     display: block
+ }
+
+
+ .card-product-grid .bottom-wrap {
+     padding: 18px;
+     border-top: 1px solid #e4e4e4
+ }
+
+ .btn {
+     display: inline-block;
+     font-weight: 600;
+     color: #343a40;
+     text-align: center;
+     vertical-align: middle;
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+     background-color: transparent;
+     border: 1px solid transparent;
+     padding: 0.45rem 0.85rem;
+     font-size: 1rem;
+     line-height: 1.5;
+     border-radius: 0.2rem
+ }
+
+ .btn-primary {
+     color: #fff;
+     background-color: #3167eb;
+     border-color: #3167eb
+ }
+
+ .fa {
+     color: #42A5F5;
+ }
+
+
+.cartitem {
+ 
+     background-color: rgb(255, 255, 255);
+    color: rgb(117, 117, 117);
+    border: solid 1px #b9bbb9;
+    border-radius: 12px;
+
+
+}
+
+
+        
+        .header {
+            width: 100%;
+            overflow: auto;
+            background-color: #ffff;
+            color: #00a000;
+            clear: both;
+            padding: 20px 50px;
+            box-sizing: border-box;
+        }
+        
+        .heading {
+            float: left;
+        }
+        
+        .cart {
+            float: right;
+            text-align: center;
+            margin-right: 102px;
+            margin-top: -82px;
+        }
+        
+        .total-text p {
+            display: inline;
+        }
+        
+        #cart-items {
+     position: absolute;
+    right: 67px;
+    top: 4%;
+    margin-top: 52px;
+    padding: 50px 40px;
+    background-color: #fff;
+    color: #757575;
+    z-index: 999;
+    width: 545px;
+ 
+}
+
+
+     } 
+        
+        .item {
+            position: relative;
+            float: left;
+            margin: 1%;
+            border: 1px solid #00a000;
+            width: 30%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        
+        .item-detail h4 {
+            color: #fff;
+        }
+        
+        .item-detail p {
+            color: #00a000;
+            font-weight: bold;
+        }
+        
+        
+        
+        .remove {
+     border-radius: 3px;
+    color: red;
+    margin: 0px 5px;
+    padding: 0px 2px;
+    float: right;
+    font-size: 19px;
+    margin-top: 8px;
+    cursor: pointer;
+        }
+        
+        #list-item li {
+    margin: 8px 0px;
+    border: solid 1px #d6c5c5;
+    padding: 3px;
+    border-radius: 11px;
+    margin-right: 25px;
+    margin-left: -21px;
+
+}
+
+.cradlist{
+  border-bottom: solid;
+    height: 271px;
+    overflow: overlay;
+    margin-right: -11px;
+
+}
+       
+    </style>
+</head>
+
+<body>
+  <header>
+    	<div class="heading col-md-12">
+            <h1 style="text-align: center;">add to Cart</h1>
+        </div>
+    </header>
+      
+        <div class="cart">
+            <i class="fa fa-shopping-cart fa-2x"></i>
+            <i class="fa fa-caret-down"></i><br>
+            <div class="total-text " style="background-color: #fff;
+    color: #757575;">
+                <p id="cart-fly">Items</p>
+                <p id="items-basket"></p>
+            </div>
+        </div>
+           
+        <div id="cart-items" class="cartitem">
+        	<h4 style="text-align: center; margin-top: -34px;" >My Cart</h4>
+        	<div>
+            <ol id="list-item" class="cradlist">
+            </ol>
+             </div>
+             <div>
+            <div class="total-text" style="float: right;">
+                <p>Total: </p>
+                <p id="total-price"></p>
+            </div>
+             <div ><button class="btn btn-primary">Go To Checkout</button></div>
+             </div>
+        </div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 procr">
+            <figure class="card card-product-grid card-lg"> <a href="#" class="img-wrap" data-abc="true"><img src="image/products1.jpg"></a>
+                <figcaption class="info-wrap">
+                    <div class="row">
+                        <div class="col-md-8"> <a href="#" class="title" data-abc="true">ASUS Laptop - 5GB RAM</a> </div>
+                        <div class="col-md-4">
+                            <div class="rating text-right"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
+                        </div>
+                    </div>
+                </figcaption>
+                <div class="bottom-wrap"> <a href="#" class="btn btn-primary float-right catad"  data-abc="true"> Add to Cart</a>
+                    <div class="price-wrap"><span class="h5">$</span> <span class="price h5">1567</span></div>
+                </div>
+            </figure>
+        </div>
+        <div class="col-md-4 procr">
+            <figure class="card card-product-grid card-lg"> <a href="#" class="img-wrap" data-abc="true"><img src="image/products2.jpg"></a>
+                <figcaption class="info-wrap">
+                    <div class="row">
+                        <div class="col-md-8"> <a href="#" id="name" class="title" data-abc="true">Dell Laptop - 5GB RAM</a> </div>
+                        <div class="col-md-4">
+                            <div class="rating text-right"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
+                        </div>
+                    </div>
+                </figcaption>
+                <div class="bottom-wrap"> <a href="#" class="btn btn-primary float-right catad"  data-abc="true"> Add to Cart</a>
+                    <div class="price-wrap"><span class="h5">$</span> <span class="price h5">567</span></div>
+                </div>
+            </figure>
+        </div>
+        <div class="col-md-4 procr">
+            <figure class="card card-product-grid card-lg"> <a href="#" class="img-wrap" data-abc="true"><img src="image/leptop.jpg"></a>
+                <figcaption class="info-wrap">
+                    <div class="row">
+                        <div class="col-md-8"> <a href="#" class="title" data-abc="true">Acer Laptop - 5GB RAM</a> </div>
+                        <div class="col-md-4">
+                            <div class="rating text-right"> <i class="fa fa-star"></i> </div>
+                        </div>
+                    </div>
+                </figcaption>
+                <div class="bottom-wrap"> <a href="#" class="btn btn-primary float-right catad"  data-abc="true"> Add to Cart</a>
+                    <div class="price-wrap"><span class="h5">$</span> <span class="price h5">989</span></div>
+                </div>
+            </figure>
+        </div>
+        <div class="col-md-4 procr">
+            <figure class="card card-product-grid card-lg"> <a href="#" class="img-wrap" data-abc="true"><img src="image/products4.jpg"></a>
+                <figcaption class="info-wrap">
+                    <div class="row">
+                        <div class="col-md-8"> <a href="#" class="title" data-abc="true">HP Laptop - 5GB RAM</a> </div>
+                        <div class="col-md-4">
+                            <div class="rating text-right"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
+                        </div>
+                    </div>
+                </figcaption>
+                <div class="bottom-wrap"> <a href="#" class="btn btn-primary float-right catad"  data-abc="true"> Add to Cart</a>
+                    <div class="price-wrap"><span class="h5">$</span> <span class="price h5">999</span></div>
+                </div>
+            </figure>
+        </div>
+        <div class="col-md-4 procr">
+            <figure class="card card-product-grid card-lg"> <a href="#" class="img-wrap" data-abc="true"><img src="image/products5.jpg"></a>
+                <figcaption class="info-wrap">
+                    <div class="row">
+                        <div class="col-md-8"> <a href="#" class="title" data-abc="true">Dell Laptop - 5GB RAM</a> </div>
+                    </div>
+                </figcaption>
+                <div class="bottom-wrap"> <a href="#" class="btn btn-primary float-right catad"  data-abc="true"> Add to Cart</a>
+                    <div class="price-wrap"><span class="h5">$</span> <span class="price h5">399</span></div>
+                </div>
+            </figure>
+        </div>
+        <div class="col-md-4 procr">
+            <figure class="card card-product-grid card-lg"> <a href="#" class="img-wrap" data-abc="true"><img src="image/products6.jpg"></a>
+                <figcaption class="info-wrap">
+                    <div class="row">
+                        <div class="col-md-8"> <a href="#" class="title" data-abc="true">Dell Laptop - 5GB RAM</a> </div>
+                        <div class="col-md-4">
+                            <div class="rating text-right"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
+                        </div>
+                    </div>
+                </figcaption>
+                <div class="bottom-wrap"> <a href="#" class="btn btn-primary float-right" data-abc="true"> Add to Cart </a>
+                    <div class="price-wrap"><span class="h5">$</span> <span class="price h5">599</span> </div>
+                </div>
+            </figure>
+        </div>
+    </div>
+</div>
+    
+
+
+    </div>
+
+    <script>
+        $(function() {
+             
+           var counter = 0;
+
+            $("#cart-items").slideUp();
+            $(".cart").on("click", function() {
+                $("#cart-items").slideToggle();
+            });
+
+            $("#items-basket").text("(" + ($("#list-item").children().length) + ")");
+            
+
+            $(".catad").on("click", function() {
+                counter++;
+
+                $("#cart-items").slideDown();
+                setTimeout(function() {
+                        $("#cart-items").slideUp();
+                    }, 2000)
+                    //add items to basket
+                $(this).each(function() {
+                    var name = $(this).parent(".bottom-wrap").parent(".card").children(".info-wrap").children(".row").children(".col-md-8").children("a.title").text();
+                    var pimage = $(this).parent(".bottom-wrap").parent(".card").children("a").children("img").attr("src");
+                    var remove = "<i class='fa fa-trash remove' style='color:red;'></i>";
+                    var dprice = parseFloat($(this).parent(".bottom-wrap").parent(".card").children(".bottom-wrap").children(".price-wrap").children(".price").text());
+                       
+                    var cena = "<span class='eachPrice'>" + dprice + "</span>";
+
+                       var quantity = 1;
+
+                     var linePrice = dprice * quantity;
+
+                    $("#list-item").append("<li class='cadd'><img src='"+ pimage +"' style='height: 36px;'/>" + name + "&#09;  &#09; = " + cena + "$ <span class='pass-quantity'><input type='number' id='in"+ counter +"' value='1' min='1'max='100'style='width: 44px;' /></span> = <span id='pric' class='pp'></span> " + remove + " </li>");
+                  
+                    //number of items in basket
+                    $("#items-basket").text("(" + ($("#list-item").children().length) + ")");
+                    $("#items-basket").text();
+                     
+                   //quyanty
+                       $(this).each(function() {
+                       $('.pass-quantity input[id=in'+ counter +']').each(function(){
+                      $(this).change(function() {
+                      var pp = parseFloat($(this).parent(".pass-quantity").parent(".cadd").children(".eachPrice").text());
+               
+                             var quantity = $(this).val();
+                             var linePrice = dprice * quantity;
+                             $(this).parent(".pass-quantity").parent(".cadd").children("#pric").text(linePrice + "$");
+                               //alert(linePrice);
+                               var totalPrice = 0;
+                    $(".pp").each(function() {
+                        var cenaEach = parseFloat($(this).text());
+                        totalPrice += cenaEach;
+
+                    }); 
+                    $("#total-price").text("$" + totalPrice  );
+
+                      
+                           });
+                             
+                            $(this).parent(".pass-quantity").parent(".cadd").children("#pric").text(linePrice + "$");
+                             
+                              var totalPrice = 0;
+                    $(".pp").each(function() {
+                        var cenaEach = parseFloat($(this).text());
+                        totalPrice += cenaEach;
+                    });
+                    $("#total-price").text("$" + totalPrice  );
+
+                             });
+                          
+                            
+                           });
+                    //calculate total price
+                   
+               
+
+                });
+                //remove items from basket
+                $(".remove").on("click", function() {
+                    $(this).parent().remove();
+
+                    var totalPrice = 0;
+                    $(".eachPrice").each(function() {
+                        var cenaEach = parseFloat($(this).text());
+                        totalPrice += cenaEach;
+                    });
+                    $("#total-price").text(totalPrice + "$");
+                    $("#items-basket").text("(" + ($("#list-item").children().length) + ")");
+                });
+
+            });
+
+   
+        })
+    </script>
+
+</body>
+
+</html>
